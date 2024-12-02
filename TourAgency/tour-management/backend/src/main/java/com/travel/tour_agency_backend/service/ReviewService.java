@@ -19,6 +19,7 @@ public class ReviewService {
     private final ReviewRepository reviewRepository;
     private final TourRepository tourRepository; // !!!
     private final UserRepository userRepository; // !!!
+
     @Autowired
     public ReviewService(ReviewRepository reviewRepository, TourRepository tourRepository, UserRepository userRepository) {
         this.reviewRepository = reviewRepository;
@@ -76,7 +77,6 @@ public class ReviewService {
 
         reviewRepository.deleteById(reviewId);
     }
-
 
 
 }

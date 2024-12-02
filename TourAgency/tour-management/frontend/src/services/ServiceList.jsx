@@ -1,6 +1,6 @@
 import React from "react"
 import ServiceCard from "./ServiceCard";
-import { Col } from "reactstrap";
+import {Col} from "reactstrap";
 
 import weatherImg from '../assets/images/weather.png'
 import guideImg from '../assets/images/guide.png'
@@ -26,13 +26,13 @@ const servicesData = [
 
 const ServiceList = () => {
     return (
-    <>
-        {servicesData.map((item, index) => ( 
-            <Col lg='3' key={index}>
-                <ServiceCard item={item} />
-            </Col>
-        ))}
-    </>
+        <>
+            {servicesData.map((item, index) => (
+                <Col lg='3' key={index}>
+                    <ServiceCard item={item}/>
+                </Col>
+            ))}
+        </>
     );
 };
 

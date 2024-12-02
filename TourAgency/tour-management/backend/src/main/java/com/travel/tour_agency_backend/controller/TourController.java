@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import com.travel.tour_agency_backend.security.JwtTokenProvider;
+
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 
 @RestController
@@ -18,7 +20,7 @@ public class TourController {
 
     private final TourService tourService;
     @Autowired
-    private  ReviewService reviewService;
+    private ReviewService reviewService;
 
     @Autowired
     private JwtTokenProvider tokenProvider;
@@ -67,7 +69,7 @@ public class TourController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid token");
             }
 
-        }catch (Exception exception) {
+        } catch (Exception exception) {
             return ResponseEntity.badRequest().body("Failed to create a tour" + exception.getMessage());
 
         }
@@ -96,7 +98,7 @@ public class TourController {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED); // !!!  401 Unauthorized
             }
 
-        }catch (Exception exception) {
+        } catch (Exception exception) {
 
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
@@ -104,7 +106,6 @@ public class TourController {
 
 
     }
-
 
 
     @GetMapping("/{tourId}/reviews") // !!!  Измененный endpoint

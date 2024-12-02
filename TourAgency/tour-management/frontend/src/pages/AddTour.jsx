@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Container, Row, Col, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
 const AddTour = () => {
@@ -17,11 +17,11 @@ const AddTour = () => {
     });
 
     const handleChange = (e) => {
-        setNewTour({ ...newTour, [e.target.name]: e.target.value });
+        setNewTour({...newTour, [e.target.name]: e.target.value});
     };
 
     const handleFeaturedChange = (e) => {
-        setNewTour({ ...newTour, featured: e.target.checked });
+        setNewTour({...newTour, featured: e.target.checked});
     }
 
 
@@ -38,7 +38,7 @@ const AddTour = () => {
             navigate('/'); // Перенаправление после успешного добавления
         } catch (error) {
             console.error("Error adding tour:", error);
-            if(error.response){
+            if (error.response) {
                 console.error("Server responded with:", error.response.data);
             }
 
@@ -53,35 +53,36 @@ const AddTour = () => {
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label for="title">Title</Label>
-                            <Input type="text" name="title" id="title" onChange={handleChange} required />
+                            <Input type="text" name="title" id="title" onChange={handleChange} required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="description">Description</Label>
-                            <Input type="textarea" name="description" id="description" onChange={handleChange} required />
+                            <Input type="textarea" name="description" id="description" onChange={handleChange}
+                                   required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="city">City</Label>
-                            <Input type="text" name="city" id="city" onChange={handleChange} required />
+                            <Input type="text" name="city" id="city" onChange={handleChange} required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="price">Price</Label>
-                            <Input type="number" name="price" id="price" onChange={handleChange} required />
+                            <Input type="number" name="price" id="price" onChange={handleChange} required/>
                         </FormGroup>
 
                         <FormGroup>
                             <Label for="photoUrl">Photo URL</Label>
-                            <Input type="text" name="photoUrl" id="photoUrl" onChange={handleChange} required />
+                            <Input type="text" name="photoUrl" id="photoUrl" onChange={handleChange} required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="maxPeople">Max people</Label>
-                            <Input type="text" name="maxPeople" id="maxPeople" onChange={handleChange} required />
+                            <Input type="text" name="maxPeople" id="maxPeople" onChange={handleChange} required/>
                         </FormGroup>
                         <FormGroup>
                             <Label for="distance">Distance</Label>
-                            <Input type="text" name="distance" id="distance" onChange={handleChange} required />
+                            <Input type="text" name="distance" id="distance" onChange={handleChange} required/>
                         </FormGroup>
                         <FormGroup check>
-                            <Input type="checkbox" name="featured" id="featured" onChange={handleFeaturedChange} />
+                            <Input type="checkbox" name="featured" id="featured" onChange={handleFeaturedChange}/>
                             <Label check for="featured">
                                 Featured
                             </Label>

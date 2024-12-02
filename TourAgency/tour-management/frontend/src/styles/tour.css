@@ -1,4 +1,4 @@
-.pagination span{
+.pagination span {
     width: 2rem;
     height: 2rem;
     padding: 5px;
@@ -13,7 +13,7 @@
     font-weight: 700;
 }
 
-.active__page{
+.active__page {
     background: var(--secondary-color);
     color: #fff !important;
 }

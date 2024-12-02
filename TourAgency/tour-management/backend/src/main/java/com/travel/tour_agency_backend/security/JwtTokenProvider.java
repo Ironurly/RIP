@@ -22,7 +22,9 @@ import com.travel.tour_agency_backend.repository.UserRepository;
 
 
 import io.jsonwebtoken.security.Keys;
+
 import javax.crypto.SecretKey;
+
 import jakarta.annotation.PostConstruct;
 
 @Component

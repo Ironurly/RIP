@@ -1,7 +1,7 @@
 // SearchResultList.jsx
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
+import React, {useState, useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
+import {Container, Row, Col} from 'reactstrap';
 import TourCard from '../shared/TourCard';
 import axios from 'axios';
 
@@ -47,7 +47,7 @@ const SearchResultList = () => {
             <Row>
                 {tours.map((tour) => (
                     <Col lg="3" md="6" sm="6" key={tour.id}> {/* key is important */}
-                        <TourCard tour={tour} />
+                        <TourCard tour={tour}/>
                     </Col>
                 ))}
             </Row>

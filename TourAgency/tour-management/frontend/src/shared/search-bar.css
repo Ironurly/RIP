@@ -1,4 +1,4 @@
-.search__bar{
+.search__bar {
     padding: 0.5rem 1rem;
     border-radius: 50px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -18,19 +18,19 @@
     font-weight: 500;
 }
 
-.form__group input:focus{
+.form__group input:focus {
     outline: none;
 }
 
-.form__group h6{
+.form__group h6 {
     margin-bottom: 0;
 }
 
-.form__group-fast{
+.form__group-fast {
     border-right: 2px solid #ddd;
 }
 
-.search__icon i{
+.search__icon i {
     font-size: 1.6rem;
     padding: 0.5rem;
     background: var(--secondary-color);

@@ -22,7 +22,7 @@ public class ReviewController {
     private final TourRepository tourRepository;
 
     @Autowired
-    public ReviewController(ReviewService reviewService, JwtTokenProvider tokenProvider,TourRepository tourRepository) {
+    public ReviewController(ReviewService reviewService, JwtTokenProvider tokenProvider, TourRepository tourRepository) {
         this.reviewService = reviewService;
         this.tokenProvider = tokenProvider;
         this.tourRepository = tourRepository; // !!!
@@ -39,7 +39,7 @@ public class ReviewController {
     // @GetMapping("/{id}")
     //public Optional<Review> getReviewById(@PathVariable Long id) {
     //    return reviewService.getReviewById(id);
-   // }
+    // }
 
     @PutMapping("/{id}")
     public Review updateReview(@PathVariable Long id, @RequestBody Review review) {
@@ -66,7 +66,6 @@ public class ReviewController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to delete review: " + e.getMessage());
         }
     }
-
 
 
     @PostMapping

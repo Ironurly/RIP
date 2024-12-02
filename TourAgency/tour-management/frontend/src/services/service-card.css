@@ -1,4 +1,4 @@
-.service__item{
+.service__item {
     padding: 1rem;
     border-bottom: 1px solid #faa83586;
     border-right: 1px solid #faa83586;
@@ -18,16 +18,16 @@
     line-height: 50px;
 }
 
-.service__img img{
+.service__img img {
     width: 100%;
 }
 
-.service__item h5{
+.service__item h5 {
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-.service__item p{
+.service__item p {
     font-size: 0.9rem;
     color: var(--text-color);
 }

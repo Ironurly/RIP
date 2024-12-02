@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.transaction.annotation.Transactional;
+
 @Service
 public class TourService {
 
@@ -24,6 +25,7 @@ public class TourService {
 
     @Autowired
     private BookingRepository bookingRepository;
+
     // Получение всех туров
     public List<Tour> getAllTours() {
         return tourRepository.findAll();

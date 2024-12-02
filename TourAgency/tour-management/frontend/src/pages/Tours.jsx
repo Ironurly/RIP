@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import CommonSection from "../shared/CommonSection";
 import "../styles/tour.css";
 import TourCard from "./../shared/TourCard";
 import SearchBar from "./../shared/SearchBar";
-import { Col, Container, Row } from "reactstrap";
+import {Col, Container, Row} from "reactstrap";
 import Newsletter from "./../shared/Newsletter";
 import axios from "axios";
 import Footer from "../components/Footer/Footer";
@@ -40,11 +40,11 @@ const Tours = () => {
 
     return (
         <>
-            <CommonSection title={"All Tours"} />
+            <CommonSection title={"All Tours"}/>
             <section>
                 <Container>
                     <Row>
-                        <SearchBar />
+                        <SearchBar/>
                     </Row>
                 </Container>
             </section>
@@ -56,13 +56,13 @@ const Tours = () => {
                         ) : (
                             displayedTours.map((tour) => (
                                 <Col lg="3" className="mb-4" key={tour.id}>
-                                    <TourCard tour={tour} />
+                                    <TourCard tour={tour}/>
                                 </Col>
                             ))
                         )}
                         <Col lg="12">
                             <div className="pagination d-flex align-items-center justify-content-center mt-4 gap-3">
-                                {Array.from({ length: pageCount }, (_, index) => (
+                                {Array.from({length: pageCount}, (_, index) => (
                                     <span
                                         key={index}
                                         onClick={() => setPage(index)}
@@ -76,8 +76,8 @@ const Tours = () => {
                     </Row>
                 </Container>
             </section>
-            <Newsletter />
-            <Footer />
+            <Newsletter/>
+            <Footer/>
         </>
     );
 };

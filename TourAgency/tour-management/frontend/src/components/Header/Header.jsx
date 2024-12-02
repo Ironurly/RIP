@@ -6,21 +6,21 @@ import {NavLink, Link} from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
 import './header.css';
 
-const nav__links=[
+const nav__links = [
     {
-        path:'/home',
-        display:'Home'
+        path: '/home',
+        display: 'Home'
     },
     {
-        path:'/about',
-        display:'About'
+        path: '/about',
+        display: 'About'
     },
     {
-        path:'/tours',
-        display:'Tours'
+        path: '/tours',
+        display: 'Tours'
     }
 ]
-const Header = ({ isAuthenticated, onLogout, username, isAdmin }) => {
+const Header = ({isAuthenticated, onLogout, username, isAdmin}) => {
 
     const headerRef = useRef(null)
 
@@ -48,7 +48,7 @@ const Header = ({ isAuthenticated, onLogout, username, isAdmin }) => {
                     {/* ============= logo =========== */}
                     <div className="logo">
                         <Link to="/">
-                            <img src={logo} alt="" />
+                            <img src={logo} alt=""/>
                         </Link>
                     </div>
                     {/* ============= logo end=========== */}
@@ -57,9 +57,10 @@ const Header = ({ isAuthenticated, onLogout, username, isAdmin }) => {
                     <div className="navigation">
                         <ul className="menu d-flex align-items-center gap-5">
                             {
-                                nav__links.map((item,index)=>(
+                                nav__links.map((item, index) => (
                                     <li className="nav__item" key={index}>
-                                        <NavLink to={item.path} className={navClass=> navClass.isActive ? 'active__link' : ""}>{item.display}</NavLink>
+                                        <NavLink to={item.path}
+                                                 className={navClass => navClass.isActive ? 'active__link' : ""}>{item.display}</NavLink>
                                     </li>
                                 ))
                             }
@@ -73,9 +74,9 @@ const Header = ({ isAuthenticated, onLogout, username, isAdmin }) => {
                                 <>
                                     {isAdmin && ( // !!!  Если isAdmin === true
                                         <>
-                                        <Button className="btn secondary__btn">
-                                            <Link to="/add-tour">Add Tour</Link>
-                                        </Button>
+                                            <Button className="btn secondary__btn">
+                                                <Link to="/add-tour">Add Tour</Link>
+                                            </Button>
                                             <Button className="btn secondary__btn">
                                                 <Link to="/show-books">Show All Bookings</Link>
                                             </Button>

@@ -33,6 +33,7 @@ public class User {
         // Устанавливаем текущую дату и время перед сохранением объекта
         this.createdAt = LocalDateTime.now();
     }
+
     public String getUsername() {  // !!! Добавляем геттер для username
         return this.username;
     }

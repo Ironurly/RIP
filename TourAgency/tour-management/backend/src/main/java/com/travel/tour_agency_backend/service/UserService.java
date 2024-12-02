@@ -11,10 +11,12 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
     // Получение всех пользователей
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -44,6 +46,7 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
     public Optional<User> getUserByEmail(String email) {
         return userRepository.findByEmail(email); // Используем метод из UserRepository
     }
