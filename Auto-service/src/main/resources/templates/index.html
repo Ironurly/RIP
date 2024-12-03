@@ -3,24 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request List</title>
+    <title>Автомастерская</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Requests</h1>
-<ul>
-    <!-- Перебор всех запросов из репозитория -->
-    <th:block th:each="request : ${requests}">
-        <li th:text="'Client Name: ' + ${request.clientName} + ', Phone: ' + ${request.phoneNumber} + ', Car Model: ' + ${request.carModel} + ', Issue: ' + ${request.issueDescription} + ', Date: ' + ${request.appointmentDate}">Request</li>
-    </th:block>
-</ul>
+<header>
+    <h1>Автомастерская</h1>
+</header>
 
-<form action="/add-request" method="post">
-    <input type="text" name="clientName" placeholder="Client Name" required />
-    <input type="text" name="phoneNumber" placeholder="Phone Number" required />
-    <input type="text" name="carModel" placeholder="Car Model" required />
-    <textarea name="issueDescription" placeholder="Describe the issue" required></textarea>
-    <input type="text" name="appointmentDate" placeholder="Appointment Date" required />
-    <button type="submit">Add Request</button>
-</form>
+<main>
+    <section id="auth-section" class="active">
+        <h2>Добро пожаловать!</h2>
+        <p>Войдите, зарегистрируйтесь или продолжите как гость.</p>
+        <button id="show-login">Вход</button>
+        <button id="show-register">Регистрация</button>
+        <button id="continue-guest">Продолжить как гость</button>
+    </section>
+
+    <section id="login-section">
+        <h2>Вход</h2>
+        <form id="login-form">
+            <label for="login-username">Логин:</label>
+            <input type="text" id="login-username" required>
+            <label for="login-password">Пароль:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">Войти</button>
+            <button type="button" id="back-to-auth">Назад</button>
+        </form>
+    </section>
+
+    <section id="register-section">
+        <h2>Регистрация</h2>
+        <form id="register-form">
+            <label for="register-username">Логин:</label>
+            <input type="text" id="register-username" required>
+            <label for="register-password">Пароль:</label>
+            <input type="password" id="register-password" required>
+            <button type="submit">Зарегистрироваться</button>
+            <button type="button" id="back-to-auth-reg">Назад</button>
+        </form>
+    </section>
+
+    <section id="main-content">
+        <h2>Добро пожаловать на сайт!</h2>
+        <p>Вы вошли как <span id="user-role">гость</span>.</p>
+        <div class="service-list">
+            <div class="service">
+                <h3>ТО</h3>
+                <p>Техническое обслуживание автомобиля.</p>
+            </div>
+            <div class="service">
+                <h3>Ремонт</h3>
+                <p>Кузовной и механический ремонт.</p>
+            </div>
+            <div class="service">
+                <h3>Прошивка</h3>
+                <p>Обновление программного обеспечения.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Автомастерская</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

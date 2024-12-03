@@ -10,6 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -80,7 +88,7 @@
       <workItem from="1733138905155" duration="170000" />
       <workItem from="1733139092603" duration="1068000" />
       <workItem from="1733142374357" duration="558000" />
-      <workItem from="1733248578783" duration="2620000" />
+      <workItem from="1733248578783" duration="4709000" />
     </task>
     <servers />
   </component>
