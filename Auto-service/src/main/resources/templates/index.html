@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request List</title>
+</head>
+<body>
+<h1>Requests</h1>
+<ul>
+    <!-- Перебор всех запросов из репозитория -->
+    <th:block th:each="request : ${requests}">
+        <li th:text="'Client Name: ' + ${request.clientName} + ', Phone: ' + ${request.phoneNumber} + ', Car Model: ' + ${request.carModel} + ', Issue: ' + ${request.issueDescription} + ', Date: ' + ${request.appointmentDate}">Request</li>
+    </th:block>
+</ul>
+
+<form action="/add-request" method="post">
+    <input type="text" name="clientName" placeholder="Client Name" required />
+    <input type="text" name="phoneNumber" placeholder="Phone Number" required />
+    <input type="text" name="carModel" placeholder="Car Model" required />
+    <textarea name="issueDescription" placeholder="Describe the issue" required></textarea>
+    <input type="text" name="appointmentDate" placeholder="Appointment Date" required />
+    <button type="submit">Add Request</button>
+</form>
+</body>
+</html>
