@@ -15,6 +15,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -31,6 +32,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -56,6 +58,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\static\css" />
+      <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\static\js" />
+      <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\static" />
       <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\templates" />
     </key>
   </component>
@@ -89,6 +94,7 @@
       <workItem from="1733139092603" duration="1068000" />
       <workItem from="1733142374357" duration="558000" />
       <workItem from="1733248578783" duration="4709000" />
+      <workItem from="1733257484006" duration="1350000" />
     </task>
     <servers />
   </component>

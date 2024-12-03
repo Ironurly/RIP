@@ -20,6 +20,11 @@ public class RequestController {
         return "index";
     }
 
+    @GetMapping("/home")
+    public String homePage() {
+        return "home"; // home.html должен быть доступен только авторизованным пользователям
+    }
+
     @PostMapping("/add-request")
     public String addRequest(Request request) {
         requestRepository.save(request);

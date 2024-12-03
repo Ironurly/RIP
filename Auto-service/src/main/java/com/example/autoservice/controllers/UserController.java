@@ -21,13 +21,4 @@ public class UserController {
         userService.registerUser(user);
         return ResponseEntity.ok("{\"success\": true, \"message\": \"Регистрация прошла успешно.\"}");
     }
-
-    @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody User user) {
-        User existingUser = userService.findByUsername(user.getUsername());
-        if (existingUser != null && userService.checkPassword(user, existingUser)) {
-            return ResponseEntity.ok("{\"success\": true, \"message\": \"Вход успешен.\"}");
-        }
-        return ResponseEntity.status(400).body("{\"success\": false, \"message\": \"Неверный логин или пароль.\"}");
-    }
 }
