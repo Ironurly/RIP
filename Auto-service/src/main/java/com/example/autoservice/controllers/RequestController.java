@@ -17,12 +17,12 @@ public class RequestController {
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("requests", requestRepository.findAll());
-        return "index";
+        return "index"; // Здесь отображается главная страница с выбором входа
     }
 
     @GetMapping("/home")
     public String homePage() {
-        return "home"; // home.html должен быть доступен только авторизованным пользователям
+        return "home"; // Страница доступна после авторизации
     }
 
     @PostMapping("/add-request")
@@ -31,3 +31,4 @@ public class RequestController {
         return "redirect:/";
     }
 }
+

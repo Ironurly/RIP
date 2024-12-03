@@ -25,7 +25,7 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public boolean checkPassword(User inputUser, User existingUser) {
-        return passwordEncoder.matches(inputUser.getPassword(), existingUser.getPassword());
+    public boolean checkPassword(String rawPassword, String encodedPassword) {
+        return passwordEncoder.matches(rawPassword, encodedPassword);
     }
 }

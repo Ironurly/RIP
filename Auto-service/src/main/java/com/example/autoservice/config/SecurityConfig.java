@@ -22,8 +22,8 @@ public class SecurityConfig {
                         .requestMatchers("/", "/register", "/css/**", "/js/**").permitAll() // Разрешаем доступ к публичным ресурсам
                         .anyRequest().authenticated()) // Всё остальное требует авторизации
                 .formLogin((form) -> form
-                        .loginPage("/login") // Указываем маршрут страницы входа
-                        .defaultSuccessUrl("/home", true) // После успешного входа перенаправляем на /home
+                        .loginPage("/") // На главной странице будет предложен выбор способа входа
+                        .defaultSuccessUrl("/home", true) // После авторизации — на /home
                         .permitAll())
                 .logout((logout) -> logout
                         .logoutUrl("/logout")

@@ -1,54 +1,42 @@
-// Регистрация пользователя
-const registerForm = document.getElementById('register-form');
-registerForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const username = document.getElementById('register-username').value;
-    const password = document.getElementById('register-password').value;
+// Элементы секций
+const authSection = document.getElementById('auth-section');
+const loginSection = document.getElementById('login-section');
+const registerSection = document.getElementById('register-section');
+const mainContent = document.getElementById('main-content');
 
-    fetch('/api/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password })
-    }).then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Регистрация прошла успешно!');
-                authSection.classList.remove('active');
-                loginSection.classList.add('active');
-            } else {
-                alert(data.message || 'Ошибка при регистрации!');
-            }
-        }).catch(error => console.error('Ошибка:', error));
+// Кнопки
+const showLoginButton = document.getElementById('show-login');
+const showRegisterButton = document.getElementById('show-register');
+const continueGuestButton = document.getElementById('continue-guest');
+const backToAuthButton = document.getElementById('back-to-auth');
+const backToAuthRegButton = document.getElementById('back-to-auth-reg');
+
+// Показ секции входа
+showLoginButton.addEventListener('click', () => {
+    authSection.classList.remove('active');
+    loginSection.classList.add('active');
 });
 
-// Вход пользователя
-const loginForm = document.getElementById('login-form');
-loginForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const username = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
+// Показ секции регистрации
+showRegisterButton.addEventListener('click', () => {
+    authSection.classList.remove('active');
+    registerSection.classList.add('active');
+});
 
-    fetch('/api/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password })
-    }).then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Ошибка авторизации');
-    }).then(data => {
-        if (data.success) {
-            mainContent.classList.add('active');
-            authSection.classList.remove('active');
-            document.getElementById('user-role').textContent = username;
-            window.location.href = '/home'; // Перенаправление на главную страницу
-        } else {
-            alert('Неверный логин или пароль!');
-        }
-    }).catch(error => console.error('Ошибка:', error));
+// Возврат к выбору способа входа
+backToAuthButton.addEventListener('click', () => {
+    loginSection.classList.remove('active');
+    authSection.classList.add('active');
+});
+
+backToAuthRegButton.addEventListener('click', () => {
+    registerSection.classList.remove('active');
+    authSection.classList.add('active');
+});
+
+// Продолжить как гость
+continueGuestButton.addEventListener('click', () => {
+    authSection.classList.remove('active');
+    mainContent.classList.add('active');
+    document.getElementById('user-role').textContent = 'гость';
 });
