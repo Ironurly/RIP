@@ -19,7 +19,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/", "/register", "/login", "/css/**", "/js/**").permitAll() // Доступ к публичным ресурсам
+                        .requestMatchers("/", "/api/**", "/css/**", "/js/**").permitAll() // Доступ к публичным ресурсам
                         .anyRequest().authenticated()) // Остальные URL требуют авторизации
                 .formLogin((form) -> form
                         .loginPage("/") // Главная страница выполняет роль выбора входа
