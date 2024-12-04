@@ -3,61 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Автомастерская</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Login and Register</title>
 </head>
 <body>
-<header>
-    <h1>Автомастерская</h1>
-</header>
+<!-- Блок выбора действия -->
+<div id="auth-section" class="active">
+    <h1>Добро пожаловать</h1>
+    <button id="show-login">Вход</button>
+    <button id="show-register">Регистрация</button>
+</div>
 
-<main>
-    <section id="auth-section" class="active">
-        <h2>Добро пожаловать!</h2>
-        <p>Войдите, зарегистрируйтесь или продолжите как гость.</p>
-        <button id="show-login">Вход</button>
-        <button id="show-register">Регистрация</button>
-        <button id="continue-guest">Продолжить как гость</button>
-    </section>
+<!-- Форма входа -->
+<div id="login-section" style="display: none;">
+    <h2>Вход</h2>
+    <form id="login-form">
+        <label for="login-username">Имя пользователя:</label>
+        <input type="text" id="login-username" required>
+        <br>
+        <label for="login-password">Пароль:</label>
+        <input type="password" id="login-password" required>
+        <br>
+        <button type="submit">Войти</button>
+    </form>
+    <button id="back-to-auth">Назад</button>
+</div>
+
+<!-- Форма регистрации -->
+<div id="register-section" style="display: none;">
+    <h2>Регистрация</h2>
+    <form id="register-form">
+        <label for="register-username">Имя пользователя:</label>
+        <input type="text" id="register-username" required>
+        <br>
+        <label for="register-password">Пароль:</label>
+        <input type="password" id="register-password" required>
+        <br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    <button id="back-to-auth-reg">Назад</button>
+</div>
+
+<!-- Основной контент после авторизации -->
+<div id="main-content" style="display: none;">
+    <h1>Добро пожаловать, <span id="user-role">пользователь</span>!</h1>
+    <p>Вы вошли в систему.</p>
+</div>
+
+<script src="/js/script.js" defer></script>
 
 
-
-    <section id="register-section">
-        <h2>Регистрация</h2>
-        <form id="register-form">
-            <label for="register-username">Логин:</label>
-            <input type="text" id="register-username" required>
-            <label for="register-password">Пароль:</label>
-            <input type="password" id="register-password" required>
-            <button type="submit">Зарегистрироваться</button>
-            <button type="button" id="back-to-auth-reg">Назад</button>
-        </form>
-    </section>
-
-    <section id="main-content">
-        <h2>Добро пожаловать на сайт!</h2>
-        <p>Вы вошли как <span id="user-role">гость</span>.</p>
-        <div class="service-list">
-            <div class="service">
-                <h3>ТО</h3>
-                <p>Техническое обслуживание автомобиля.</p>
-            </div>
-            <div class="service">
-                <h3>Ремонт</h3>
-                <p>Кузовной и механический ремонт.</p>
-            </div>
-            <div class="service">
-                <h3>Прошивка</h3>
-                <p>Обновление программного обеспечения.</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024 Автомастерская</p>
-</footer>
-
-<script src="/js/script.js"></script>
 </body>
 </html>

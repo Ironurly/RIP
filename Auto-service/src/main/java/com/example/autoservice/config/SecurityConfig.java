@@ -19,16 +19,20 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/", "/register", "/css/**", "/js/**").permitAll() // Разрешаем доступ к публичным ресурсам
-                        .anyRequest().authenticated()) // Всё остальное требует авторизации
+                        .requestMatchers("/", "/register", "/login", "/css/**", "/js/**").permitAll() // Доступ к публичным ресурсам
+                        .anyRequest().authenticated()) // Остальные URL требуют авторизации
                 .formLogin((form) -> form
-                        .loginPage("/") // На главной странице будет предложен выбор способа входа
-                        .defaultSuccessUrl("/home", true) // После авторизации — на /home
+                        .loginPage("/") // Главная страница выполняет роль выбора входа
+                        .loginProcessingUrl("/login") // URL для обработки логина
+                        .defaultSuccessUrl("/home", true) // После успешного входа перенаправляем на /home
                         .permitAll())
                 .logout((logout) -> logout
-                        .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login") // После выхода перенаправляем на страницу входа
+                        .logoutUrl("/logout") // URL для выхода
+                        .logoutSuccessUrl("/") // После выхода перенаправляем на главную
+                        .invalidateHttpSession(true) // Очистка сессии
+                        .clearAuthentication(true) // Очистка аутентификации
                         .permitAll());
+
 
         return http.build();
     }
