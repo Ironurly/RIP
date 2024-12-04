@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be1f9aeb-3a00-4b51-9c62-5e23403831fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auto-service/src/main/resources/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/resources/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +40,8 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "900",
-    "RequestMappingsPanelWidth1": "899",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.AutoServiceApplication.executor": "Run",
@@ -105,6 +104,7 @@
       <workItem from="1733313758098" duration="170000" />
       <workItem from="1733314402385" duration="4413000" />
       <workItem from="1733322005886" duration="2158000" />
+      <workItem from="1733324592106" duration="1888000" />
     </task>
     <servers />
   </component>

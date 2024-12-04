@@ -16,38 +16,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody Map<String, String> requestBody) {
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
 
-        System.out.println("Получен запрос: " + requestBody);
-
-        String username = requestBody.get("username");
-        String password = requestBody.get("password");
-
-        if (username == null || password == null) {
-            System.out.println("Ошибка: Отсутствуют имя пользователя или пароль");
-            Map<String, Object> response = new HashMap<>();
-            response.put("success", false);
-            response.put("message", "Необходимо указать имя пользователя и пароль.");
-            return ResponseEntity.status(400).body(response);
+        if (userService.findByUsername(user.getUsername()) != null) {
+            return ResponseEntity.status(400).body("{\"success\": false, \"message\": \"Пользователь уже существует.\"}");
         }
-
-        System.out.println("Регистрация пользователя: " + username);
-        if (userService.findByUsername(username) != null) {
-            System.out.println("Ошибка: Пользователь уже существует");
-            Map<String, Object> response = new HashMap<>();
-            response.put("success", false);
-            response.put("message", "Пользователь уже существует.");
-            return ResponseEntity.status(400).body(response);
-        }
-
-        User user = new User(username, password);
         userService.registerUser(user);
-        System.out.println("Пользователь зарегистрирован: " + username);
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("success", true);
-        response.put("message", "Регистрация прошла успешно.");
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok("{\"success\": true, \"message\": \"Регистрация прошла успешно.\"}");
     }
 
 
