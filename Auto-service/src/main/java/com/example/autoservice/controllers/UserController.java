@@ -4,8 +4,10 @@ import com.example.autoservice.models.User;
 import com.example.autoservice.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
+
 import java.util.Map;
 
 @RestController
@@ -17,12 +19,23 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
+        String username = user.getUsername();
+        String password = user.getPassword();
 
-        if (userService.findByUsername(user.getUsername()) != null) {
-            return ResponseEntity.status(400).body("{\"success\": false, \"message\": \"Пользователь уже существует.\"}");
+        if (userService.findByUsername(username) != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("message", "User with this email already exists"));
         }
+
         userService.registerUser(user);
-        return ResponseEntity.ok("{\"success\": true, \"message\": \"Регистрация прошла успешно.\"}");
+
+        // Создаем Map для успешного ответа
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "Registration successful");
+        response.put("userId", user.getId());
+        response.put("username", user.getUsername());
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 
@@ -30,7 +43,6 @@ public class UserController {
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         User existingUser = userService.findByUsername(user.getUsername());
         Map<String, Object> response = new HashMap<>();
-
         if (existingUser != null && userService.checkPassword(user.getPassword(), existingUser.getPassword())) {
             response.put("success", true);
             response.put("message", "Вход выполнен успешно.");

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be1f9aeb-3a00-4b51-9c62-5e23403831fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auto-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/java/com/example/autoservice/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auto-service/src/main/resources/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/resources/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auto-service/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Auto-service/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -48,7 +56,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/5324944/Desktop/Бауманка/53Б/RIP/TourAgency",
+    "last_opened_file_path": "C:/Users/5324944/Desktop/Бауманка/53Б/РИП/TourAgency",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,7 +65,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -67,6 +75,9 @@
       <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\static\js" />
       <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\static" />
       <recent name="C:\Users\5324944\Desktop\Бауманка\53Б\RIP\Auto-service\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.autoservice.config" />
     </key>
   </component>
   <component name="RunManager">
@@ -105,6 +116,12 @@
       <workItem from="1733314402385" duration="4413000" />
       <workItem from="1733322005886" duration="2158000" />
       <workItem from="1733324592106" duration="1888000" />
+      <workItem from="1733346172062" duration="3531000" />
+      <workItem from="1733350012536" duration="537000" />
+      <workItem from="1733404768501" duration="352000" />
+      <workItem from="1733405279621" duration="2095000" />
+      <workItem from="1733420187639" duration="796000" />
+      <workItem from="1733426534074" duration="2597000" />
     </task>
     <servers />
   </component>

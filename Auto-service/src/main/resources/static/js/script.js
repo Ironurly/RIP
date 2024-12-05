@@ -46,14 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('register-username').value;
         const password = document.getElementById('register-password').value;
 
-        fetch('http://localhost:8080/api/register', {
+        fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({
+            "username": username,
+            "password": password
+            })
         })
             .then(response => {
+                console.log(JSON.stringify({
+                    "username": username,
+                    "password": password
+                }));
+                console.log('Next');
+                console.log(JSON.stringify({ username, password }));
                 console.log('HTTP Response Status:', response.status);
                 console.log('HTTP Response Body:', response);
                 if (!response.ok) {
@@ -91,17 +100,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 "password": password
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert(data.message);
-                    authSection.style.display = 'none';
-                    mainContent.style.display = 'block';
-                    document.getElementById('user-role').textContent = username;
+            .then(response => {
+                if (response.ok) {
+                    // Успешный вход
+                    window.location.href = '/home'; // Перенаправляем на главную страницу
                 } else {
-                    alert(data.message);
+                    console.error('Ошибка аутентификации');
                 }
             })
-            .catch(error => console.error('Ошибка входа:', error));
+            .catch(err => console.error(err));
     });
 });

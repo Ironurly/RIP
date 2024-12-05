@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Register</title>
-    <script src="/js/script.js" defer></script>
-</head>
-<body>
-<!-- Блок выбора действия -->
-<div id="auth-section" style="display: block;">
-    <h1>Добро пожаловать</h1>
-    <button id="show-login">Вход</button>
-    <button id="show-register">Регистрация</button>
-</div>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Login and Register</title>
+            <script src="/js/script.js" defer></script>
+        </head>
+    <body>
+    <!-- Блок выбора действия -->
+        <div id="auth-section" style="display: block;">
+            <h1>Добро пожаловать</h1>
+            <button id="show-login">Вход</button>
+            <button id="show-register">Регистрация</button>
+        </div>
 
-<!-- Форма входа -->
-<div id="login-section" style="display: none;">
-    <h2>Вход</h2>
-    <form id="login-form">
-        <label for="login-username">Имя пользователя:</label>
-        <input type="text" id="login-username" required>
-        <br>
-        <label for="login-password">Пароль:</label>
-        <input type="password" id="login-password" required>
-        <br>
-        <button type="submit">Войти</button>
-    </form>
-    <button id="back-to-auth">Назад</button>
-</div>
+    <!-- Форма входа -->
+        <div id="login-section" style="display: none;">
+            <h2>Вход</h2>
+            <form id="login-form">
+                <label for="login-username">Имя пользователя:</label>
+                <input type="text" id="login-username" required>
+                <br>
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" required>
+                <br>
+                <button type="submit">Войти</button>
+            </form>
+            <button id="back-to-auth">Назад</button>
+        </div>
 
-<!-- Форма регистрации -->
-<div id="register-section" style="display: none;">
-    <h2>Регистрация</h2>
-    <form id="register-form">
-        <label for="register-username">Имя пользователя:</label>
-        <input type="text" id="register-username" required>
-        <br>
-        <label for="register-password">Пароль:</label>
-        <input type="password" id="register-password" required>
-        <br>
-        <button type="submit">Зарегистрироваться</button>
-    </form>
-    <button id="back-to-auth-reg">Назад</button>
-</div>
+        <!-- Форма регистрации -->
+        <div id="register-section" style="display: none;">
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="register-username">Имя пользователя:</label>
+                <input type="text" id="register-username" required>
+                <br>
+                <label for="register-password">Пароль:</label>
+                <input type="password" id="register-password" required>
+                <br>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <button id="back-to-auth-reg">Назад</button>
+        </div>
 
-<!-- Основной контент после авторизации -->
-<div id="main-content" style="display: none;">
-    <h1>Добро пожаловать, <span id="user-role">пользователь</span>!</h1>
-    <p>Вы вошли в систему.</p>
-</div>
-
-
+        <!-- Основной контент после авторизации -->
+        <div id="main-content" style="display: none;">
+            <h1>Добро пожаловать, <span id="user-role">пользователь</span>!</h1>
+            <p>Вы вошли в систему.</p>
+        </div>
 
 
-</body>
+
+
+    </body>
 </html>
