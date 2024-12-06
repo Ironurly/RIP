@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm?.addEventListener('submit', (event) => {
         event.preventDefault(); // Останавливаем стандартное поведение отправки формы
 
-        const username = document.getElementById('login-username').value;
-        const password = document.getElementById('login-password').value;
+        const username = document.getElementById('login-username').value.trim();
+        const password = document.getElementById('login-password').value.trim();
 
         fetch('/api/login', {
             method: 'POST',
@@ -96,18 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                "username": username,
-                "password": password
+                username, // Упрощенная запись { "username": username }
+                password
             })
         })
             .then(response => {
-                if (response.ok) {
-                    // Успешный вход
-                    window.location.href = '/home'; // Перенаправляем на главную страницу
-                } else {
-                    console.error('Ошибка аутентификации');
-                }
+                // Проверяем статус ответа
+                return response.json().then(data => {
+                    if (response.ok) {
+                        // Успешный вход
+                        console.log('Вход успешен:', data);
+                        alert(data.message); // Сообщение об успехе
+                        window.location.href = '/home'; // Перенаправляем на /home
+                    } else {
+                        // Ошибка входа
+                        console.error('Ошибка входа:', data.message);
+                        alert(data.message); // Показываем сообщение об ошибке
+                    }
+                });
             })
-            .catch(err => console.error(err));
+            .catch(error => {
+                console.error('Fetch Error:', error.message);
+                alert('Произошла ошибка при входе. Попробуйте снова.');
+            });
     });
 });

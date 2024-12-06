@@ -46,6 +46,7 @@ public class UserController {
         if (existingUser != null && userService.checkPassword(user.getPassword(), existingUser.getPassword())) {
             response.put("success", true);
             response.put("message", "Вход выполнен успешно.");
+            response.put("username", existingUser.getUsername());
             return ResponseEntity.ok(response);
         }
 
@@ -53,6 +54,7 @@ public class UserController {
         response.put("message", "Неверный логин или пароль.");
         return ResponseEntity.status(400).body(response);
     }
+
 
 
 }
