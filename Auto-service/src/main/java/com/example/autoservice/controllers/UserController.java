@@ -8,6 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
+import java.util.ArrayList;
+
 import java.util.Map;
 
 @RestController
@@ -44,6 +49,11 @@ public class UserController {
         User existingUser = userService.findByUsername(user.getUsername());
         Map<String, Object> response = new HashMap<>();
         if (existingUser != null && userService.checkPassword(user.getPassword(), existingUser.getPassword())) {
+            // Устанавливаем пользователя как аутентифицированного
+            UsernamePasswordAuthenticationToken authentication =
+                    new UsernamePasswordAuthenticationToken(existingUser.getUsername(), null, new ArrayList<>());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+
             response.put("success", true);
             response.put("message", "Вход выполнен успешно.");
             response.put("username", existingUser.getUsername());
@@ -55,6 +65,11 @@ public class UserController {
         return ResponseEntity.status(400).body(response);
     }
 
+    @GetMapping("/home")
+    public ResponseEntity<?> getHome() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        return ResponseEntity.ok("Добро пожаловать, " + username + "!");
+    }
 
 
 }

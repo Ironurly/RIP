@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: 'include', // Позволяет сохранять куки сессии
             body: JSON.stringify({
                 username, // Упрощенная запись { "username": username }
                 password
