@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const authSection = document.getElementById('auth-section');
     const loginSection = document.getElementById('login-section');
     const registerSection = document.getElementById('register-section');
-    const mainContent = document.getElementById('main-content');
 
-    // Кнопки
+    // Кнопки для переключения между секциями
     const showLoginButton = document.getElementById('show-login');
     const showRegisterButton = document.getElementById('show-register');
     const backToAuthButton = document.getElementById('back-to-auth');
@@ -14,6 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Формы
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
+
+    // Подвал
+    const showContactsButton = document.getElementById('show-contacts');
+    const contactsSection = document.getElementById('contacts-section');
+
+    // Переключение видимости блока контактов
+    showContactsButton?.addEventListener('click', () => {
+        if (contactsSection.style.display === 'none') {
+            contactsSection.style.display = 'block';
+            showContactsButton.textContent = 'Скрыть контакты';
+        } else {
+            contactsSection.style.display = 'none';
+            showContactsButton.textContent = 'Контакты';
+        }
+    });
 
     // Показ секции входа
     showLoginButton?.addEventListener('click', () => {
@@ -27,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         registerSection.style.display = 'block';
     });
 
-    // Возврат к авторизации из входа
+    // Возврат к авторизации из секции входа
     backToAuthButton?.addEventListener('click', () => {
         loginSection.style.display = 'none';
         authSection.style.display = 'block';
     });
 
-    // Возврат к авторизации из регистрации
+    // Возврат к авторизации из секции регистрации
     backToAuthRegButton?.addEventListener('click', () => {
         registerSection.style.display = 'none';
         authSection.style.display = 'block';
@@ -43,44 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
     registerForm?.addEventListener('submit', (event) => {
         event.preventDefault(); // Останавливаем стандартное поведение отправки формы
 
-        const username = document.getElementById('register-username').value;
-        const password = document.getElementById('register-password').value;
+        const username = document.getElementById('register-username').value.trim();
+        const password = document.getElementById('register-password').value.trim();
 
         fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-            "username": username,
-            "password": password
-            })
+            body: JSON.stringify({ username, password })
         })
-            .then(response => {
-                console.log(JSON.stringify({
-                    "username": username,
-                    "password": password
-                }));
-                console.log('Next');
-                console.log(JSON.stringify({ username, password }));
-                console.log('HTTP Response Status:', response.status);
-                console.log('HTTP Response Body:', response);
-                if (!response.ok) {
-                    return response.json().then(errorData => {
-                        console.error('Error Response Data:', errorData);
-                        throw new Error(errorData.message || 'Ошибка регистрации');
-                    });
+            .then(response => response.json().then(data => {
+                if (response.ok) {
+                    alert(data.message);
+                    authSection.style.display = 'block';
+                    registerSection.style.display = 'none';
+                } else {
+                    console.error('Ошибка регистрации:', data.message);
+                    alert(data.message);
                 }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Success Response Data:', data);
-                alert(data.message);
-                authSection.style.display = 'block';
-                registerSection.style.display = 'none';
-            })
-            .catch(error => console.error('Fetch Error:', error.message));
-
+            }))
+            .catch(error => {
+                console.error('Ошибка при регистрации:', error.message);
+                alert('Произошла ошибка при регистрации. Попробуйте снова.');
+            });
     });
 
     // Обработка формы входа
@@ -96,28 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Content-Type': 'application/json',
             },
             credentials: 'include', // Позволяет сохранять куки сессии
-            body: JSON.stringify({
-                username, // Упрощенная запись { "username": username }
-                password
-            })
+            body: JSON.stringify({ username, password })
         })
-            .then(response => {
-                // Проверяем статус ответа
-                return response.json().then(data => {
-                    if (response.ok) {
-                        // Успешный вход
-                        console.log('Вход успешен:', data);
-                        alert(data.message); // Сообщение об успехе
-                        window.location.href = '/home'; // Перенаправляем на /home
-                    } else {
-                        // Ошибка входа
-                        console.error('Ошибка входа:', data.message);
-                        alert(data.message); // Показываем сообщение об ошибке
-                    }
-                });
-            })
+            .then(response => response.json().then(data => {
+                if (response.ok) {
+                    alert(data.message); // Сообщение об успехе
+                    window.location.href = '/home'; // Перенаправляем на /home
+                } else {
+                    console.error('Ошибка входа:', data.message);
+                    alert(data.message);
+                }
+            }))
             .catch(error => {
-                console.error('Fetch Error:', error.message);
+                console.error('Ошибка при входе:', error.message);
                 alert('Произошла ошибка при входе. Попробуйте снова.');
             });
     });

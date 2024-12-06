@@ -1,57 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Login and Register</title>
-            <script src="/js/script.js" defer></script>
-        </head>
-    <body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автомастерская BDV</title>
+    <link rel="stylesheet" href="/css/styles_index.css">
+    <script src="/js/script.js" defer></script>
+</head>
+<body>
+
+<!-- Хедер -->
+<header>
+    <div class="header-container">
+        <h1>Автомастерская BDV</h1>
+    </div>
+</header>
+
+<!-- Основной контент -->
+<div class="container">
     <!-- Блок выбора действия -->
-        <div id="auth-section" style="display: block;">
-            <h1>Добро пожаловать</h1>
-            <button id="show-login">Вход</button>
-            <button id="show-register">Регистрация</button>
-        </div>
+    <div id="auth-section" class="auth-section">
+        <button id="show-login" class="button">Вход</button>
+        <button id="show-register" class="button">Регистрация</button>
+    </div>
 
     <!-- Форма входа -->
-        <div id="login-section" style="display: none;">
-            <h2>Вход</h2>
-            <form id="login-form">
-                <label for="login-username">Имя пользователя:</label>
-                <input type="text" id="login-username" required>
-                <br>
-                <label for="login-password">Пароль:</label>
-                <input type="password" id="login-password" required>
-                <br>
-                <button type="submit">Войти</button>
-            </form>
-            <button id="back-to-auth">Назад</button>
+    <div id="login-section" class="auth-section" style="display: none;">
+        <h2>Вход</h2>
+        <form id="login-form">
+            <label for="login-username">Имя пользователя:</label>
+            <input type="text" id="login-username" class="input-field" required>
+            <br>
+            <label for="login-password">Пароль:</label>
+            <input type="password" id="login-password" class="input-field" required>
+            <br>
+            <button type="submit" class="button">Войти</button>
+        </form>
+        <button id="back-to-auth" class="button">Назад</button>
+    </div>
+
+    <!-- Форма регистрации -->
+    <div id="register-section" class="auth-section" style="display: none;">
+        <h2>Регистрация</h2>
+        <form id="register-form">
+            <label for="register-username">Имя пользователя:</label>
+            <input type="text" id="register-username" class="input-field" required>
+            <br>
+            <label for="register-password">Пароль:</label>
+            <input type="password" id="register-password" class="input-field" required>
+            <br>
+            <button type="submit" class="button">Зарегистрироваться</button>
+        </form>
+        <button id="back-to-auth-reg" class="button">Назад</button>
+    </div>
+</div>
+
+<!-- Подвал -->
+
+<footer class="footer">
+    <div class="footer-left">
+        <h3>BDV Автомастерская</h3>
+        <button id="show-contacts" class="footer-button">Контакты</button>
+        <div id="contacts-section" style="display: none;">
+            <p>Телефон: +7 (937) 318-60-99</p>
+            <p>Телефон: +7 (903) 605-84-99</p>
+            <p>Email: info@bdv-auto.ru</p>
         </div>
-
-        <!-- Форма регистрации -->
-        <div id="register-section" style="display: none;">
-            <h2>Регистрация</h2>
-            <form id="register-form">
-                <label for="register-username">Имя пользователя:</label>
-                <input type="text" id="register-username" required>
-                <br>
-                <label for="register-password">Пароль:</label>
-                <input type="password" id="register-password" required>
-                <br>
-                <button type="submit">Зарегистрироваться</button>
-            </form>
-            <button id="back-to-auth-reg">Назад</button>
-        </div>
-
-        <!-- Основной контент после авторизации -->
-        <div id="main-content" style="display: none;">
-            <h1>Добро пожаловать, <span id="user-role">пользователь</span>!</h1>
-            <p>Вы вошли в систему.</p>
-        </div>
+    </div>
+</footer>
 
 
-
-
-    </body>
+</body>
 </html>
