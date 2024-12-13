@@ -1,0 +1,128 @@
+body {
+    background-image: url("gradient.jpg");
+    font-family: "Arial", sans-serif;
+    color: white;
+}
+
+#autoservice-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+}
+
+#autoservice-nav div a {
+    color: rgb(235, 235, 235);
+    font-weight: 400;
+    border-radius: 10px;
+    padding-left: 10px;
+    text-align: center;
+    width: 150%;
+}
+
+#autoservice-nav div a:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#autoservice-nav div a#active {
+    background-color: rgb(0, 0, 0);
+    font-weight: 600;
+    border: 1px dashed white;
+}
+
+#autoservice-footer {
+     padding-left: 20px;
+     padding-right: 20px;
+     font-weight: 400;
+     padding-top: 15px;
+     position: absolute;
+     background-color: rgba(0, 0, 0, 0.5);
+     width: 100%;
+     bottom: 0px;
+     height: 50px
+}
+
+#username {
+    text-align: right;
+    float: right;
+    color: white;
+    font-weight: 400;
+    width: 100%;
+    padding-right: 20px;
+}
+
+/* Таблицы */
+
+#autoservice-table {
+    padding: 20px;
+    border: none;
+    margin: 20px;
+    margin-top: 0px;
+    font-size: 80%;
+    overflow: auto;
+}
+
+#autoservice-table table#auto-table {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#autoservice-table table#auto-table tr {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    text-align: center;
+}
+
+table#auto-table td {
+    border: 1px solid gray;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+table#auto-table tr.tableBody td {
+    font-weight: 200;
+}
+
+table#auto-table tr.tableHeader {
+    line-height: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Формы */
+
+#autoservice-form {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 10px;
+    overflow: hidden;
+    width: 600px;
+}
+
+#autoservice-form input, #autoservice-form select {
+    border-radius: 5px;
+    float: right;
+    width: 50%;
+    padding: 5px;
+}
+
+#autoservice-form span {
+    width: 200px;
+}
+
+select:hover {
+    cursor: pointer;
+    background-color: rgb(210, 210, 210);
+}
+
+.readonly {
+    background-color: rgb(210, 210, 210);
+    cursor: default;
+}
+
+#criteria tr, #criteria td {
+    border: none;
+    background-color: transparent;
+}
+
+#criteria select, #criteria input {
+    width: 200px;
+}
